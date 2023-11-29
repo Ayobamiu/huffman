@@ -31,7 +31,7 @@ HuffmanNode *buildHuffmanTree(vector<char> &letters, vector<int> &frequencies)
     priority_queue<HuffmanNode *, vector<HuffmanNode *>, CompareNodes> minHeap;
 
     // Create nodes for each letter and add to minHeap
-    for (size_t i = 0; i < letters.size(); ++i)
+    for (size_t i = 0; i < letters.size(); i++)
     {
         // create a newNode
         HuffmanNode *node = new HuffmanNode(letters[i], frequencies[i]);
@@ -114,7 +114,6 @@ void printResult(vector<char> data, vector<int> frequency, unordered_map<char, s
     {
         FormatDataInTabularForm(data.at(i));
         FormatDataInTabularForm(frequency.at(i));
-
         FormatDataInTabularForm(huffmanCodes[data.at(i)]);
         FormatDataInTabularForm(huffmanCodes[data.at(i)].length());
         FormatDataInTabularForm(huffmanCodes[data.at(i)].length() * frequency.at(i));
