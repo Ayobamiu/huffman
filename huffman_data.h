@@ -2,25 +2,23 @@
 #include <string>
 using namespace std;
 
-
-
-
-// Node structure for Huffman Tree
-struct HuffmanNode
+struct HeapNode
 {
-    char data;
-    int frequency;
-    HuffmanNode *left;
-    HuffmanNode *right;
-
-    HuffmanNode(char d, int f) : data(d), frequency(f), left(nullptr), right(nullptr) {}
+    unsigned frequency;
+    char letter;
+    HeapNode *left, *right;
 };
 
-// Comparison struct for priority_queue
-struct CompareNodes
+struct MinHeap
 {
-    bool operator()(HuffmanNode *a, HuffmanNode *b)
-    {
-        return a->frequency > b->frequency;
-    }
+    unsigned size;
+    unsigned capacity;
+    HeapNode **array;
+};
+
+struct TableData
+{
+    struct HeapNode *root;
+    string code_array;
+    int top;
 };
